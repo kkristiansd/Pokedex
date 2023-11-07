@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PokemonCard from './PokemonCard.js';
-
+import './style.css';
 
 const Carousel = () => {
   const [pokemonData, setPokemonData] = useState([]);
@@ -34,9 +34,15 @@ const Carousel = () => {
 
   return (
     <div className="carousel">
-      <button onClick={prevPokemon}>Previous</button>
-      <PokemonCard pokemon={pokemonData[currentIndex]} />
-      <button onClick={nextPokemon}>Next</button>
+      <div className="carousel-container">
+        <button onClick={prevPokemon}>Previous</button>
+        <div className="pokemon-card-stack">
+          <PokemonCard pokemon={pokemonData[(currentIndex - 1 + pokemonData.length) % pokemonData.length]} />
+          <PokemonCard pokemon={pokemonData[currentIndex]} />
+          <PokemonCard pokemon={pokemonData[(currentIndex + 1) % pokemonData.length]} />
+        </div>
+        <button onClick={nextPokemon}>Next</button>
+      </div>
     </div>
   );
 };

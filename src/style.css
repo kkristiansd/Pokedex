@@ -1,0 +1,16 @@
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .pokemon-card-stack {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px; /* Adjust the max width as needed */
+  }
+  
+  /* You may need to add additional styling to PokemonCard components */
+  
