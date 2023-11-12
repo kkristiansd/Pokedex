@@ -13,4 +13,17 @@
   }
   
   /* You may need to add additional styling to PokemonCard components */
-  
+  /* Add this to your style.css file or create a new one if needed */
+
+.pokemon-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px; /* Adjust the gap as needed */
+}
+
+.pokemon-card {
+  text-align: center; /* Center the content within each card */
+  /* Add any additional styling for your cards */
+}
+
+/* Add more styles as needed */

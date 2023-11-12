@@ -1,20 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-import Carousel from './Carousel';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
-function App() {
-   // Define 'pokemonData' here, or fetch it from an API
-   const pokemonData = [
-    { id: 1, name: "Bulbasaur", type: "Grass/Poison" },
-    { id: 2, name: "Charmander", type: "Fire" },
-    // Add more Pokémon data
-  ];
+import Pokedex from './Pokedex';
+import About from './About';
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>Pokedex</h1>
-      <Carousel data={pokemonData} />
-    </div>
+    <Router>
+      <div>
+        {/* Navigation */}
+        <nav>
+          <ul>
+            <li>
+              <Link to="/pokedex">Pokedex</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* Routes */}
+        <Routes>
+          <Route path="/pokedex" element={<Pokedex />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
